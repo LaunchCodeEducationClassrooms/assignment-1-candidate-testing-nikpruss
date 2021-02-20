@@ -8,7 +8,7 @@ let candidateName = "";
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
-let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometer == 5000 meters? ","(5 + 3)/2 * 10 = ?", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?", "What is the minimum crew size for the ISS?"];
+let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometer == 5000 meters? ","(5 + 3)/2 * 10 = ? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?", "What is the minimum crew size for the ISS?"];
 let correctAnswers = ["Sally Ride", "True", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 
@@ -35,7 +35,7 @@ function gradeQuiz(candidateAnswers) {
     } 
     console.log ((i+1)+") "+ questions[i],"\nYour Answer: " + candidateAnswers[i],"\nCorrect answer is: ", correctAnswers[i]); 
   }
-  return grade;
+  return grade/5*100;
 }
 
 function runProgram() {
@@ -45,7 +45,7 @@ function runProgram() {
   askQuestion();
   console.log ("Candidate Name: " + candidateName);
   let finalGrade = gradeQuiz(candidateAnswers);
-  console.log (">>> Overall Grade: " + finalGrade/5*100 + "% ("+ finalGrade + " of 5 responses correct) <<<");
+  console.log (">>> Overall Grade: " + finalGrade + "% ("+ finalGrade/100*5 + " of 5 responses correct) <<<");
 }
 
 // Don't write any code below this line //
